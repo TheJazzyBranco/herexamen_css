@@ -1,0 +1,263 @@
+@use './base/reset';
+@use './base/fonts';
+@use './base/variables' as *;
+@use './base/mixins' as *;
+@import "../../icons/style.css";
+
+body {
+  font-family: $open_sans;
+}
+
+header {
+  .container {
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    .logo {
+      text-decoration: none;
+      margin: 21px 0 21px 150px;
+    }
+    nav {
+      margin-left: auto;
+      margin-right: 127px;
+
+      ul {
+        display: flex;
+
+        li {
+          margin-left: 18px;
+          margin-right: 18px;
+
+          a {
+            padding: 5px;
+            color: #ccc;
+            font-size: 14px;
+            text-transform: capitalize;
+            text-decoration: none;
+            transition: all 200ms ease;
+            &:hover {
+              color: #ff9b51;
+            }
+          }
+        }
+      }
+      .hamburger {
+        display: none;
+        color: white;
+      }
+    }
+  }
+}
+
+section {
+  min-height: 640px;
+  background-image: url(../../img/banner_background.jpg);
+  background-size: cover;
+  background-position: center;
+  .container {
+    @include make-col(2, 230);
+    padding-top: 130px;
+    padding-bottom: 140px;
+    .section_left {
+      margin-left: 150px;
+      margin-right: auto;
+      img {
+        max-width: 118px;
+        max-height: 60px;
+        margin-bottom: 33px;
+      }
+      h1 {
+        color: white;
+        font-size: 36px;
+        font-weight: $bold_raleway;
+        text-transform: uppercase;
+        font-family: $raleway;
+        line-height: 44px;
+        margin-bottom: 40px;
+        max-width: 550px;
+      }
+      .line {
+        width: 64px;
+        height: 2px;
+        background-color: white;
+        margin-bottom: 40px;
+      }
+      p {
+        max-width: 470px;
+        color: #ccc;
+        font-family: $raleway;
+        font-weight: $light_raleway;
+        font-size: 16px;
+        line-height: 23px;
+        margin-bottom: 45px;
+      }
+
+      button {
+        height: 40px;
+        padding-right: 30px;
+        padding-left: 30px;
+        line-height: 40px;
+        font-family: $open_sans;
+        font-size: 15px;
+        font-weight: $semi_bold_open;
+        text-transform: capitalize;
+        background-color: transparent;
+        color: white;
+        border: 1px solid white;
+      }
+    }
+
+    .formulier {
+      display: flex;
+      flex-direction: column;
+      margin-left: 150px;
+      margin-right: 150px;
+      width: 360px;
+      margin-top: 30px;
+      h2 {
+        padding-left: 52px;
+        padding-top: 20px;
+        height: 55px;
+        background-color: #f5f5f5;
+        font-size: 20px;
+        font-family: $open_sans;
+        font-weight: $bold_open;
+        border-radius: 3px 3px 0 0;
+        border-style: none;
+        text-transform: capitalize;
+        outline: none;
+        span {
+          text-transform: uppercase;
+          color: #ff9b51;
+        }
+      }
+      input {
+        background-color: white;
+        height: 85px;
+        border-style: none;
+        outline: none;
+        font-family: $open_sans;
+        font-size: 14px;
+        font-weight: 400;
+        text-transform: capitalize;
+        padding-left: 55px;
+      }
+    }
+    button {
+      height: 55px;
+      background-color: #ff9b51;
+      color: white;
+      text-transform: capitalize;
+      font-family: $open_sans;
+      font-size: 15px;
+      font-weight: 600;
+      text-align: center;
+      padding-top: 22px;
+      border-style: none;
+      border-radius: 0 0 3px 3px;
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  background-color: white;
+  .container {
+    display: flex;
+    .social_media {
+      margin-left: 150px;
+      h2 {
+        padding-top: 23px;
+        font-family: $open_sans;
+        font-weight: $bold_open;
+        font-size: 20px;
+        color: #333333;
+        text-transform: capitalize;
+        margin-bottom: 12px;
+      }
+      p {
+        font-family: $open_sans;
+        font-weight: $regular_open;
+        font-size: 14px;
+        padding-bottom: 38px;
+        color: #ccc;
+      }
+    }
+    .social_logo {
+      margin-left: auto;
+      margin-right: 123px;
+      align-self: center;
+      display: flex;
+      flex-wrap: wrap;
+      a {
+        margin-left: 25px;
+        margin-right: 25px;
+        padding: 5px;
+        font-size: 45px;
+        color: #ccc;
+      }
+      .icon icon-instagram {
+        color: #ccc;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  header {
+    .container {
+      .logo {
+        margin-left: 50px;
+      }
+      nav {
+        margin-right: 27px;
+        ul {
+          li {
+            margin-left: 9px;
+            margin-right: 9px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  header {
+    .container {
+      nav {
+        display: none;
+      }
+      .hamburger {
+        display: block;
+        margin-left: auto;
+        margin-right: 30px;
+        font-size: 30px;
+        color: white;
+        padding: 5px;
+      }
+    }
+  }
+  section {
+    .container {
+      .section_left {
+        margin-left: 30px;
+        margin-right: 30px;
+      }
+      .formulier {
+        margin-right: 30px;
+        margin-left: 30px;
+      }
+    }
+  }
+  footer {
+    .container {
+      .social_media {
+        margin-left: 30px;
+      }
+      .social_logo {
+        margin-right: 30px;
+      }
+    }
+  }
+}
